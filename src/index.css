@@ -1,1 +1,8 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&family=Hanuman:wght@100;300;400;700;900&display=swap";
 @import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", "sans-serif";
+  --font-hanuman: "Hanuman", "serif";
+  --font-khmer: "Poppins", "Hanuman", "sans-serif";
+}

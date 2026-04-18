@@ -54,8 +54,6 @@ const MorePage = () => {
                   tabIndex={-1}
                   id={`menu-item-${item.label}`}
                 >
-                  {item.label}
-                  <Home size={14} className="text-gray-400" />
                 </Link>
               ))}
             </div>
