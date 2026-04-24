@@ -1,11 +1,11 @@
 import { Heart, ShieldCheck, Users, Lightbulb } from 'lucide-react';
 
 export const logos = [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Alitalia_logo.svg/1200px-Alitalia_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/1200px-HSBC_logo_%282018%29.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lexmark_Logo.svg/1280px-Lexmark_Logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1024px-Walmart_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Signify_Health_logo.svg/1200px-Signify_Health_logo.svg.png"
+    "https://www.smart.com.kh/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white-horizontal.49d9aad5.png&w=640&q=75",
+    "https://www.cellcard.com.kh/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.ed222f31.png&w=384&q=75",
+    "https://metfone.com.kh/image/logo-red.png",
+    "https://cdn.prod.website-files.com/5ee6fcacadd438672e2e72b6/6344e1f77a04132be596e51e_photo_2022-10-10_16-10-41.jpg",
+    "https://www.ababank.com/typo3conf/ext/boxmodel/Resources/Private/Templates/ABA/images/aba-web-top-logo.png"
 ];
 
 export const stats = [

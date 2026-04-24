@@ -1,7 +1,8 @@
 import React from 'react';
 import { logos, values,stats } from '../Data/Data_about';
 import PageTemplate from '../Components/PageTemplate';
-
+import galleryOpRoom from '../images/gallery_op_room.png';
+import doctorImage from '../images/doctor_female1.png';
 const About = () =><div>
   <div className='text-center py-6 px-3 max-w-4xl mx-auto'>
     <h1 className='text-4xl md:text-5xl font-bold text-[#003366] mb-6'>About</h1>
@@ -46,16 +47,17 @@ const About = () =><div>
           </div>
         </div>
 
+
         {/* Overlapping Images Container */}
         <div className="lg:w-1/2 relative">
           <img 
-            src="https://themewagon.github.io/Clinic/assets/img/health/facilities-6.webp" 
+            src={galleryOpRoom}
             alt="Laboratory" 
             className="rounded-3xl shadow-xl w-full"
           />
           <div className="absolute -bottom-10 -right-6 w-48 h-48 border-8 border-white rounded-full overflow-hidden shadow-2xl hidden md:block">
             <img 
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300" 
+              src={doctorImage}
               alt="Doctor" 
               className="w-full h-full object-cover"
             />
@@ -89,7 +91,7 @@ const About = () =><div>
         <p className="text-gray-400 text-xs mb-12">
           Recognized by leading healthcare organizations for our commitment to quality care
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 ">
           {logos.map((logo, i) => (
             <img key={i} src={logo} alt="Partner" className="h-6 md:h-8 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer" />
           ))}

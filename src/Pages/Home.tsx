@@ -190,7 +190,7 @@ const Home = () => {
                 Emergency Hotline
               </div>
               <div className="text-[15px] font-bold text-[#1e293b] tracking-tight">
-                +1 (555) 911-2468
+                +(855) 31 477 7288
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="text-[9px] text-[#94a3b8] font-medium text-right mt-1 pr-1">
-                Dr. Sarah Johnson
+                បណ្ឌិត សុខ វិចិត្រ
               </div>
             </div>
 
@@ -829,7 +829,7 @@ const Home = () => {
           <div className="flex flex-col items-center md:items-end gap-3">
             <button className="bg-[#1d4ed8] hover:bg-blue-800 text-white px-8 py-4 rounded-lg flex items-center gap-3 transition-all font-semibold shadow-lg shadow-blue-200">
               <Phone size={20} fill="white" />
-              (555) 123-4567
+              +(855) 31 477 7288
             </button>
             <a href="#" className="text-gray-400 text-sm hover:underline">Find Location</a>
           </div>

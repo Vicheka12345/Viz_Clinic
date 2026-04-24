@@ -15,7 +15,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
-      {/* {(!isUserPage && !isContactPage) && <Footer />} */}
+      <Footer />
     </div>
   )
 }

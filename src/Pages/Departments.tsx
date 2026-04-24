@@ -1,7 +1,7 @@
 import React from 'react';
 import care from "../images/care.webp"
 import PageTemplate from '../Components/PageTemplate';
-import { Brain, Activity, Stethoscope, FileText } from 'lucide-react';
+import { Brain, Activity, Stethoscope, FileText, Heart, ChevronRight } from 'lucide-react';
 
 const Departments = () => {
   const [activeDept, setActiveDept] = React.useState('Neurology');
@@ -41,7 +41,7 @@ const Departments = () => {
           
           {/* Left Content Area - set to order-2 on mobile, order-1 on desktop */}
           <div className='lg:w-2/3 order-2 lg:order-1'>
-            <h2 className='text-3xl md:text-4xl font-extrabold text-blue-950 mb-6 font-poppins'>
+            <h2 className='text-3xl md:text-4xl font-extrabold text-blue-950 mb-6 font-roboto'>
               {activeDept} Sciences Department
             </h2>
             <p className='text-gray-500 text-lg leading-relaxed mb-12'>
@@ -106,6 +106,74 @@ const Departments = () => {
             </div>
           </div>
 
+        </div>
+      </section>
+      {/* box-content */}
+      <section className='bg-gray-50 py-20 font-roboto'>
+        <div className='max-w-7xl mx-auto px-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {/* Cardiology Card */}
+            <div className='group bg-white rounded-[1rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full'>
+              <div className='relative h-64 overflow-hidden'>
+                <img className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700' src={care} alt="Cardiology" />
+                <div className='absolute top-6 right-6 w-16 h-16 border border-white group-hover:bg-sky-500 rounded-xl flex items-center justify-center text-white shadow-xl transform group-hover:rotate-6 transition-all duration-500'>
+                  <Heart size={32} fill="currentColor" fillOpacity={0.2} />
+                </div>
+              </div>
+              <div className='p-8 flex flex-col flex-grow'>
+                <h3 className='text-2xl font-bold text-blue-950 mb-4 '>Cardiology</h3>
+                <p className='text-gray-500 leading-relaxed mb-6 text-sm flex-grow'>
+                  Comprehensive heart care with advanced diagnostic tools and expert cardiologists dedicated to your cardiovascular health.
+                </p>
+                <a className='inline-flex items-center text-blue-600 font-bold group/link hover:text-blue-700 transition-colors' href="#">
+                  Learn More 
+                  <ChevronRight className='ml-1 group-hover/link:translate-x-1 transition-transform' size={18} />
+                </a>
+              </div>
+            </div>
+
+            {/* Neurology Card */}
+            <div className='group bg-white rounded-[1rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full'>
+              <div className='relative h-64 overflow-hidden'>
+                <img className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700' src={care} alt="Neurology" />
+                <div className='absolute top-6 right-6 w-16 h-16 border border-white group-hover:bg-sky-500 rounded-xl flex items-center justify-center text-white shadow-xl transform group-hover:rotate-6 transition-all duration-500'>
+                  <Brain size={32} />
+                </div>
+              </div>
+              <div className='p-8 flex flex-col flex-grow'>
+                <h3 className='text-2xl font-bold text-blue-950 mb-4 font-roboto'>Neurology</h3>
+                <p className='text-gray-500 leading-relaxed mb-6 text-sm flex-grow'>
+                  Expert care for complex neurological conditions, utilizing cutting-edge technology for brain and nervous system health.
+                </p>
+                <a className='inline-flex items-center text-blue-600 font-bold group/link hover:text-blue-700 transition-colors' href="#">
+                  Learn More 
+                  <ChevronRight className='ml-1 group-hover/link:translate-x-1 transition-transform' size={18} />
+                </a>
+              </div>
+            </div>
+
+            {/* Surgery Card */}
+            <div className='group bg-white rounded-[1rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full'>
+              <div className='relative h-64 overflow-hidden'>
+                <img className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700' src={care} alt="Surgery" />
+                <div className='absolute top-6 right-6 w-16 h-16 border border-white group-hover:bg-sky-500 rounded-xl flex items-center justify-center text-white shadow-xl transform group-hover:rotate-6 transition-all duration-500'>
+                  <Stethoscope size={32} />
+                </div>
+              </div>
+              <div className='p-8 flex flex-col flex-grow'>
+                <h3 className='text-2xl font-bold text-blue-950 mb-4 font-roboto'>Surgery</h3>
+                <p className='text-gray-500 leading-relaxed mb-6 text-sm flex-grow'>
+                  Advanced surgical procedures performed by world-class specialists in our state-of-the-art operating facilities.
+                </p>
+                <a className='inline-flex items-center text-blue-600 font-bold group/link hover:text-blue-700 transition-colors' href="#">
+                  Learn More 
+                  <ChevronRight className='ml-1 group-hover/link:translate-x-1 transition-transform' size={18} />
+                </a>
+              </div>
+            </div>
+
+           
+          </div>
         </div>
       </section>
     </div>
