@@ -61,14 +61,14 @@ function Navbar() {
 
       {/* Main Navbar */}
       <nav
-        className={`flex items-center  justify-between px-5 md:px-10 lg:px-16 py-3 sticky top-0 z-[200] transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-slate-100' : 'bg-white/70 backdrop-blur-md shadow-sm border-b border-slate-100'}`}
+        className={`flex items-center justify-between px-5 md:px-10 lg:px-16 py-3 sticky top-0 z-[200] transition-all duration-300 ${isOpen || scrolled ? 'bg-white shadow-lg border-b border-slate-100' : 'bg-white/70 backdrop-blur-md shadow-sm border-b border-slate-100'}`}
         role="navigation"
         aria-label="Main navigation"
       >
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]"
+          className="flex items-center  gap-3 group transition-transform duration-300 hover:scale-[1.02]"
           onClick={() => setIsOpen(false)}
         >
           <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-md shadow-blue-200">
@@ -100,10 +100,10 @@ function Navbar() {
           id="primary-navigation"
           className={`
             flex gap-1 font-medium transition-all duration-300 ease-in-out
-            absolute lg:static top-full left-0 right-0backdrop-blur-lg lg:bg-transparent
+            absolute lg:static top-full left-0 right-0 backdrop-blur-lg lg:bg-transparent 
             flex-col lg:flex-row items-start lg:items-center overflow-hidden lg:overflow-visible
             pl-6 lg:pl-0
-            ${isOpen ? "active max-h-[1000px] py-6 lg:py-0 border-t border-slate-100 shadow-lg lg:shadow-none" : "max-h-0 lg:max-h-full py-0"}
+            ${isOpen ? "bg-white active max-h-[1000px] py-6 lg:py-0 border-t border-slate-100 shadow-lg lg:shadow-none" : "max-h-0 lg:max-h-full py-0"}
             lg:flex
           `}
         >
