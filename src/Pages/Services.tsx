@@ -3,7 +3,7 @@ import PageTemplate from '../Components/PageTemplate';
 import { ArrowRight, Check } from 'lucide-react';
 import { servicesData } from '../Data/Service';
 const Services = () => (
-  <div className="bg-slate-50 min-h-screen font-roboto">
+  <div className="min-h-screen font-roboto">
     <PageTemplate 
       title='Services' 
       description='Comprehensive healthcare services tailored to your needs.' 

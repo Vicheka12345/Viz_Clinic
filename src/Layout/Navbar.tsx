@@ -61,7 +61,7 @@ function Navbar() {
 
       {/* Main Navbar */}
       <nav
-        className={`flex items-center justify-between px-5 md:px-10 lg:px-16 py-3 sticky top-0 z-[200] transition-all duration-300 ${scrolled ? 'bg-white shadow-lg border-b border-slate-100' : 'bg-white shadow-sm border-b border-slate-100'}`}
+        className={`flex items-center  justify-between px-5 md:px-10 lg:px-16 py-3 sticky top-0 z-[200] transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-slate-100' : 'bg-white/70 backdrop-blur-md shadow-sm border-b border-slate-100'}`}
         role="navigation"
         aria-label="Main navigation"
       >
@@ -100,7 +100,7 @@ function Navbar() {
           id="primary-navigation"
           className={`
             flex gap-1 font-medium transition-all duration-300 ease-in-out
-            absolute lg:static top-full left-0 right-0 bg-white lg:bg-transparent
+            absolute lg:static top-full left-0 right-0backdrop-blur-lg lg:bg-transparent
             flex-col lg:flex-row items-start lg:items-center overflow-hidden lg:overflow-visible
             pl-6 lg:pl-0
             ${isOpen ? "active max-h-[1000px] py-6 lg:py-0 border-t border-slate-100 shadow-lg lg:shadow-none" : "max-h-0 lg:max-h-full py-0"}
@@ -138,7 +138,7 @@ function Navbar() {
 
                   <ul className={`
                     ${dropdownOpen ? "block" : "hidden"}
-                    lg:absolute lg:top-full lg:left-0 lg:bg-white lg:min-w-[220px] lg:shadow-xl lg:rounded-xl lg:border lg:border-slate-100
+                    lg:absolute lg:top-full lg:left-0 lg:bg-white/95 lg:backdrop-blur-md lg:min-w-[220px] lg:shadow-xl lg:rounded-xl lg:border lg:border-slate-100
                     flex flex-col gap-0.5 py-2 lg:p-2 z-[300]
                   `}>
                     {link.dropdown.map((sub) => (

@@ -48,7 +48,7 @@ const sections = [
 ];
 
 const Privacy = () => (
-  <div className="bg-slate-50 min-h-screen font-roboto">
+  <div className="min-h-screen font-roboto">
     <PageTemplate title="Privacy Policy" description="How we protect and handle your personal health information." isHome={false} />
 
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

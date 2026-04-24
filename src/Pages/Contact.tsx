@@ -14,7 +14,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen font-roboto">
+    <div className="min-h-screen font-roboto">
       <PageTemplate title="Contact" description="Get in touch with our team for any inquiries or support." isHome={false} />
 
       {/* Header */}

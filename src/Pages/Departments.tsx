@@ -109,7 +109,7 @@ const Departments = () => {
         </div>
       </section>
       {/* box-content */}
-      <section className='bg-gray-50 py-20 font-roboto'>
+      <section className='py-20 font-roboto'>
         <div className='max-w-7xl mx-auto px-4'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {/* Cardiology Card */}

@@ -124,7 +124,7 @@ const Doctor = () => {
   });
 
   return (
-    <div className="bg-slate-50 min-h-screen font-robto ">
+    <div className="min-h-screen font-robto ">
       <PageTemplate
         title="Doctors"
         description="Meet our world-class team of dedicated healthcare professionals."

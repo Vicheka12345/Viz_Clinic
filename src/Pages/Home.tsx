@@ -72,9 +72,9 @@ export const DoctorCard = ({ doctor }: { doctor: any }) => (
       <Link to="/DoctorDetail" state={{ doctor }} className="flex-1 py-3 px-4 flex items-center justify-center border border-gray-200 rounded-xl text-slate-600 font-medium hover:bg-gray-50 transition-colors text-sm">
         View Details
       </Link>
-      <button className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors text-sm">
+      <Link to="/Appointment" className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors text-center text-sm">
         {doctor.actionType === 'book' ? 'Book Now' : 'Schedule'}
-      </button>
+      </Link>
     </div>
   </div>
 );
@@ -91,7 +91,7 @@ const Home = () => {
   
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-blue-100/40 to-slate-50 overflow-hidden relative">
+    <div className="overflow-hidden relative">
       {/* BG blobs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-300/15 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
@@ -159,9 +159,9 @@ const Home = () => {
           <div
             className={`flex flex-wrap gap-4 items-center mb-9 ${fade("delay-300")}`}
           >
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full text-sm transition-all hover:-translate-y-0.5 shadow-lg shadow-blue-300">
+            <Link to="/Appointment" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full text-sm transition-all hover:-translate-y-0.5 shadow-lg shadow-blue-300">
               Book Appointment
-            </button>
+            </Link>
             <button
               onClick={() =>
                 window.open(
@@ -308,9 +308,11 @@ const Home = () => {
               </div>
             </div>
 
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300">
-              Learn More About Us
-            </button>
+            <div className="flex justify-center lg:justify-start">
+              <Link to="/About" className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300">
+                Learn More About Us
+              </Link>
+            </div>
           </div>
 
           {/* Right Image Side */}
@@ -565,11 +567,11 @@ const Home = () => {
  
         {/* Right: Button */}
         <a
-          href="tel:5551234567"
+          href="tel:851234567"
           className="flex-shrink-0 flex items-center gap-2 bg-white text-blue-600 font-semibold text-sm px-5 py-3 rounded-full hover:bg-blue-50 transition-colors duration-200 whitespace-nowrap"
         >
           <Phone className="w-4 h-4" />
-          Call Emergency: (555) 123-4567
+          Call Emergency: +(855) 123-4567
         </a>
       </div>
     </div>
@@ -624,13 +626,13 @@ const Home = () => {
               Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ante ipsum primis in
               faucibus orci luctus et ultrices posuere cubilia curae donec velit neque.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/Services"
               className="inline-flex items-center gap-1.5 text-blue-600 font-semibold text-xs sm:text-sm hover:gap-3 transition-all duration-200 group"
             >
               Explore Our Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
+            </Link>
           </div>
         </div>
  
@@ -779,12 +781,12 @@ const Home = () => {
             veniam, quis nostrud exercitation.
           </p>
           <div className="flex flex-col items-center md:items-start space-y-4 pt-4">
-            <a href="#" className="text-blue-600 font-semibold flex items-center justify-center md:justify-start gap-2 hover:underline border-b border-blue-600 w-fit pb-1">
+            <Link to="/Appointment" className="text-blue-600 font-semibold flex items-center justify-center md:justify-start gap-2 hover:underline border-b border-blue-600 w-fit pb-1">
               Schedule Consultation <span className="text-lg">→</span>
-            </a>
-            <a href="#" className="text-gray-400 text-sm flex items-center justify-center md:justify-start gap-2 hover:text-gray-600 transition-colors">
+            </Link>
+            <Link to="/Services" className="text-gray-400 text-sm flex items-center justify-center md:justify-start gap-2 hover:text-gray-600 transition-colors">
               Explore Services <span className="text-lg">→</span>
-            </a>
+            </Link>
           </div>
         </div>
         

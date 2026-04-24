@@ -16,7 +16,7 @@ const About = () =><div>
     title='About' 
     description='Book your table and enjoy the best culinary experience.' 
   />
-  <div className="bg-white py-6 px-3 font-sans">
+  <div className="py-6 px-3 font-sans">
       {/* Top Section: Content & Statistics */}
       <section className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-start mb-24">
         <div className="lg:w-1/2 space-y-8">
@@ -66,7 +66,7 @@ const About = () =><div>
       </section>
 
       {/* Core Values Section */}
-      <section className="max-w-7xl mx-auto text-center mb-24 py-5">
+      <section className="max-w-7xl mx-auto text-center mb-20 py-5">
         <h2 className="text-3xl text-[#003366] font-semibold mb-4">Our Core Values</h2>
         <p className="text-gray-400 text-sm max-w-xl mx-auto mb-16">
           These principles guide everything we do in our commitment to exceptional healthcare
@@ -86,14 +86,14 @@ const About = () =><div>
       </section>
 
       {/* Accreditations Section */}
-      <section className="max-w-6xl mx-auto bg-blue-50/30 rounded-3xl p-12 text-center">
+      <section className="max-w-6xl mx-auto bg-blue-50/30 rounded-3xl p-5 text-center">
         <h2 className="text-2xl text-[#003366] font-light mb-2">Accreditations & Certifications</h2>
-        <p className="text-gray-400 text-xs mb-12">
+        <p className="text-xs mb-12">
           Recognized by leading healthcare organizations for our commitment to quality care
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 ">
+        <div className="flex flex-wrap justify-center items-center gap-5 md:gap-10 ">
           {logos.map((logo, i) => (
-            <img key={i} src={logo} alt="Partner" className="h-6 md:h-8 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer" />
+            <img key={i} src={logo} alt="Partner" className="h-6 md:h-8 object-coverl" />
           ))}
         </div>
       </section>
