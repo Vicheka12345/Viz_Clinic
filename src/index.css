@@ -6,9 +6,37 @@
   --font-hanuman: "Hanuman", "serif";
   --font-khmer: "Hanuman", "serif";
   --font-roboto: "Roboto", "sans-serif";
+  
+  /* Dashboard Professional Palette */
+  --color-primary: #2563EB;
+  --color-dashboard-bg: #F8FAFC;
+  --color-dashboard-text: #1E293B;
+  --color-dashboard-muted: #64748B;
+  --color-dashboard-border: #E2E8F0;
+  
+  /* Status Colors */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
 }
 
 /* Global default font — applies to every page */
 body {
   font-family: "Roboto", "Hanuman", "sans-serif";
+}
+
+/* Custom Scrollbar for Sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
