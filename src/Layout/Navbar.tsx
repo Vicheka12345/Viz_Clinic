@@ -98,7 +98,7 @@ function Navbar() {
         `}
       >
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-dashboard-border flex items-center justify-between">
+        <div className="p-6 border-b border-dashboard-border flex items-center">
           <Link
             to="/"
             className="flex items-center gap-3"
@@ -111,12 +111,6 @@ function Navbar() {
               VIZ Clinic
             </span>
           </Link>
-          <button
-            className="lg:hidden text-dashboard-muted"
-            onClick={() => setIsOpen(false)}
-          >
-            <X size={20} />
-          </button>
         </div>
 
         {/* Navigation Items */}
