@@ -119,7 +119,7 @@ const Home = () => {
 
           {/* Headline */}
           <h1
-            className={`text-3xl md:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-tight mb-5 ${fade("delay-100")}`}
+            className={`text-3xl md:text-5xl xl:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-5 ${fade("delay-100")}`}
           >
             Excellence in{" "}
             <span className="text-blue-600 underline decoration-blue-300 underline-offset-4">
@@ -130,7 +130,7 @@ const Home = () => {
 
           {/* Description */}
           <p
-            className={`text-slate-500 text-base leading-relaxed max-w-lg mb-8 ${fade("delay-150")}`}
+            className={`text-slate-500 dark:text-slate-300 text-base leading-relaxed max-w-lg mb-8 ${fade("delay-150")}`}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -148,7 +148,7 @@ const Home = () => {
                 <div className="text-3xl font-extrabold text-blue-600 leading-none mb-1">
                   {val}
                 </div>
-                <div className="text-xs text-slate-400 font-medium">
+                <div className="text-xs text-slate-400 dark:text-slate-300 font-medium">
                   {label}
                 </div>
               </div>

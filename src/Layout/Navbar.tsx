@@ -12,6 +12,8 @@ import {
   Users,
   Layout,
   Mail,
+  Moon,
+  Sun,
 } from "lucide-react";
 
 const links = [
@@ -43,7 +45,12 @@ const links = [
   { label: "Contact Us", path: "/Contact", icon: <Mail size={18} /> },
 ];
 
-function Navbar() {
+type NavbarProps = {
+  isDarkMode: boolean;
+  onToggleDarkMode: () => void;
+};
+
+function Navbar({ isDarkMode, onToggleDarkMode }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -67,19 +74,30 @@ function Navbar() {
   return (
     <>
       {/* Mobile Toggle Header (Visible only on mobile) */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-[100] bg-white/90 backdrop-blur-md text-dashboard-text p-4 flex items-center justify-between shadow-sm border-b border-dashboard-border">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-[100] bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-dashboard-text p-4 flex items-center justify-between shadow-sm border-b border-dashboard-border">
         <Link to="/" className="flex items-center gap-3">
           <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-md shadow-primary/20">
             <span className="text-white font-black text-lg">V</span>
           </div>
           <span className="font-black text-dashboard-text tracking-tight">VIZ Clinic</span>
         </Link>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="p-2 hover:bg-dashboard-bg rounded-xl text-dashboard-muted transition-colors"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={onToggleDarkMode}
+            aria-label={isDarkMode ? "Turn off dark mode" : "Turn on dark mode"}
+            title={isDarkMode ? "Turn off dark mode" : "Turn on dark mode"}
+            className="theme-toggle-button p-2 hover:bg-dashboard-bg rounded-xl text-dashboard-muted transition-colors"
+          >
+            {isDarkMode ? <Sun size={22} /> : <Moon size={22} />}
+          </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 hover:bg-dashboard-bg rounded-xl text-dashboard-muted transition-colors"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Backdrop (mobile only) */}
@@ -93,7 +111,7 @@ function Navbar() {
       {/* Persistent Sidebar */}
       <aside
         ref={sidebarRef}
-        className={`fixed top-0 left-0 bottom-0 w-[240px] bg-white text-dashboard-muted z-[120] border-r border-dashboard-border transition-transform duration-300 ease-in-out flex flex-col
+        className={`fixed top-0 left-0 bottom-0 w-[240px] bg-white dark:bg-slate-900 text-dashboard-muted z-[120] border-r border-dashboard-border transition-transform duration-300 ease-in-out flex flex-col
           ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
@@ -185,7 +203,7 @@ function Navbar() {
 
         {/* Sidebar Footer */}
         <div className="p-6 bg-dashboard-bg border-t border-dashboard-border">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold text-sm border border-blue-100">
               VC
             </div>
@@ -197,6 +215,15 @@ function Navbar() {
                 Online
               </span>
             </div>
+            <button
+              type="button"
+              onClick={onToggleDarkMode}
+              aria-label={isDarkMode ? "Turn off dark mode" : "Turn on dark mode"}
+              title={isDarkMode ? "Turn off dark mode" : "Turn on dark mode"}
+              className="theme-toggle-button ml-auto p-2 text-dashboard-muted hover:bg-white dark:hover:bg-slate-800 rounded-xl transition-colors"
+            >
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
           </div>
         </div>
       </aside>

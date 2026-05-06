@@ -1,6 +1,8 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100..900;1,100..900&family=Hanuman:wght@100;300;400;700;900&display=swap";
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-poppins: "Poppins", "sans-serif";
   --font-hanuman: "Hanuman", "serif";
@@ -21,9 +23,215 @@
   --color-info: #3B82F6;
 }
 
+.dark {
+  color-scheme: dark;
+  --color-primary: #60A5FA;
+  --color-dashboard-bg: #0F172A;
+  --color-dashboard-text: #E5E7EB;
+  --color-dashboard-muted: #94A3B8;
+  --color-dashboard-border: #1E293B;
+}
+
 /* Global default font — applies to every page */
 body {
   font-family: "Roboto", "Hanuman", "sans-serif";
+  background: var(--color-dashboard-bg);
+}
+
+body,
+header,
+aside,
+main,
+footer,
+section,
+article,
+div,
+button,
+a,
+input,
+select,
+textarea,
+p,
+h1,
+h2,
+h3,
+h4,
+span {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 280ms;
+  transition-timing-function: ease;
+}
+
+.theme-toggle-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-button svg {
+  transition: transform 280ms ease, filter 280ms ease;
+}
+
+.theme-toggle-button:active svg {
+  transform: rotate(45deg) scale(0.82);
+  filter: drop-shadow(0 0 10px rgb(96 165 250 / 0.75));
+}
+
+.theme-transition-overlay {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  width: 160vmax;
+  height: 160vmax;
+  pointer-events: none;
+  border-radius: 9999px;
+  transform: translate(50%, -50%) scale(0);
+  animation: theme-ripple 850ms ease-out forwards;
+}
+
+.theme-transition-overlay--to-dark {
+  background: radial-gradient(circle, rgb(15 23 42 / 0.96) 0%, rgb(15 23 42 / 0.82) 48%, transparent 70%);
+}
+
+.theme-transition-overlay--to-light {
+  background: radial-gradient(circle, rgb(248 250 252 / 0.96) 0%, rgb(248 250 252 / 0.82) 48%, transparent 70%);
+}
+
+@keyframes theme-ripple {
+  0% {
+    opacity: 0.85;
+    transform: translate(50%, -50%) scale(0);
+  }
+
+  70% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  body,
+  header,
+  aside,
+  main,
+  footer,
+  section,
+  article,
+  div,
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  span,
+  .theme-toggle-button svg {
+    transition-duration: 0.01ms !important;
+  }
+
+  .theme-transition-overlay {
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.dark .bg-white,
+.dark .bg-slate-50,
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark [class*="bg-[#f8fafd]"],
+.dark [class*="bg-[#f8f9fa]"] {
+  background-color: #111827 !important;
+}
+
+.dark .bg-white\/80,
+.dark .bg-white\/90,
+.dark .bg-white\/95 {
+  background-color: rgb(15 23 42 / 0.9) !important;
+}
+
+.dark .bg-slate-100,
+.dark .bg-blue-50,
+.dark .bg-blue-100,
+.dark .bg-gray-50,
+.dark [class*="bg-[#eef4ff]"] {
+  background-color: #1E293B !important;
+}
+
+.dark .hover\:bg-blue-50\/50:hover,
+.dark .hover\:bg-gray-100:hover,
+.dark .hover\:bg-gray-50:hover {
+  background-color: #172033 !important;
+}
+
+.dark .border-blue-100,
+.dark .border-blue-200,
+.dark .border-slate-50,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-gray-50,
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-white {
+  border-color: #334155 !important;
+}
+
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155 !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-blue-950,
+.dark .text-blue-900,
+.dark .text-blue-800,
+.dark .text-indigo-950,
+.dark .text-indigo-900,
+.dark .text-black,
+.dark [class*="text-[#003366]"],
+.dark [class*="text-[#1e293b]"] {
+  color: #F8FAFC !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-gray-600 {
+  color: #D1D5DB !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400,
+.dark .text-gray-500,
+.dark .text-gray-400,
+.dark [class*="text-slate-500/"],
+.dark [class*="text-gray-500/"],
+.dark [class*="text-slate-400/"],
+.dark [class*="text-gray-400/"],
+.dark [class*="text-[#94a3b8]"] {
+  color: #A7B4C7 !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #0F172A;
+  color: #E5E7EB;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748B;
 }
 
 /* Custom Scrollbar for Sidebar */
